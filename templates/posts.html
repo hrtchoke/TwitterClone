@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+
+<section class ='content' style="font-family:Lusitana">
+    <section class = 'navbar'>
+
+    </section>
+    <section class = 'post_form'>
+        <form action = "/" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input id="post1" type="text" name="name" placeholder ="Name" style=" border-style:double; border-radius:5px; border-color:black; border-width:2px;"required>
+            <textarea id="post2" name ="body" placeholder="Tell us anything" style=" border-style:double; border-radius:5px; border-color:black; border-width:2px;" required></textarea> 
+            <input style="color:white;border-style:double;border-radius:5px;" type="file" name="image">
+            <input type="submit" id = "postbutton"value="Post" style="font-weight:bold; border-style:double; border-radius:5px; border-color:black; border-width:2px;">
+        </form>
+        
+    
+    </section>
+    <section class = 'posts'>
+        <ul>
+        {% for post in posts %}
+        <li>
+                
+            <img class="menu_icon js-menu-icon" src = "{% static 'css/img/option.png' %}"/>
+            <div style="font-family:Lusitana;" class="menu">
+                <a href="{% url 'edit' post.id %}" style="color: rgb(0, 0, 0); font-weight:bold;">Edit</a><br>
+                <a href ='/delete/{{ post.id }}/' style="color: rgb(0, 0, 0); font-weight:bold">Delete</a>
+            </div>
+            <div class="logo">
+                <img src = "{% static 'css/img/user.png' %}"/>
+        </div>
+        <div style="font-family:Lusitana" class="name_body">
+            <div class = "name">{{ post.name }}</div>
+            <div class = "datetime">{{ post.created_at }}</div>
+            <p>{{ post.body }}</p><form action  = "/likes/{{ post.id }}/" >
+                
+            {% if post.image %}
+             <img src="{{post.image.url}}" alt="" style="height: 350px; width: 400px;" />
+                {% endif %}
+                <div>
+                <input type="image" src ="{% static 'css/img/notliked.png' %}"style = "width: 20px; font-size: 15px;" alt="submit" name="likebutton"  value="{{ post.id }}" class="btn btn-info" id = "likebutton" ><span style = "font-size: 16px; font-family:Lusitana"></span></button> <h1 style =  " font-family:Lusitana; font-size: 18px;margin:0;  margin-bottom:0; text-align:left" class = "likecount">{{ post.likecount }} <span style="font-family:Lusitana; font-size: 18px;">likes</span></h1>
+                </div>
+                </form>
+        </div>
+        </li>
+        {% endfor %}
+        </ul>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src = "{% static 'js/posts.js' %}"></script>
+</section>
+{% endblock %} 

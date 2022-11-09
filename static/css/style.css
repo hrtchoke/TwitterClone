@@ -1,0 +1,161 @@
+
+html, 
+body{
+background-image: url(/static/css/img/sss.jpg);
+height:100%;
+
+
+
+}
+
+.content{
+    margin-top:0;
+    max-width: 600px;
+    height: 100%;
+    margin: 0 auto;
+   
+}
+
+.posts{
+    padding: 1px;
+    background-color: rgb(128, 128, 128);
+}
+.post_form #postbutton:hover{
+    background-color: black;
+    color:white
+}
+
+.post_form #updatebutton:hover{
+    background-color: black;
+    color:white
+}
+
+.post_form{
+    border-width: 5px;
+    border-radius: 10px;
+    border-style: groove;
+    border-color: black;
+    font-family: Lusitana;
+    text-align: center;
+
+    padding: 20px 40px;
+    
+}
+.post_form input{
+    
+    color:black;
+    font-family: Lusitana;
+    margin: 0 auto; 
+    text-align: center;
+
+    width:70%;
+    margin-bottom: 10px;
+    padding:10px;
+    border: 1px solid #ccc;
+}
+.post_form #post1{
+    
+    height:10px;
+    font-size:13pt;
+    font-family: Lusitana;
+    color:black;    
+}
+.post_form #post2{
+    
+    height:30px;
+    font-size:12pt;
+    font-family: Lusitana;
+    color:black;
+}
+
+.post_form textarea{
+    font-family: Lusitana;
+    width:70%;
+    padding:10px;
+    border: 1px solid #ccc;
+}
+.posts{
+    border-style: double;
+    border-width: 5px;
+    border-radius: 10px;
+}
+.posts ul {
+    font-family: Lusitana;
+    background-color: transparent;
+    padding:1px;
+}
+
+.posts li {
+
+    font-family: Lusitana;
+    background-color: transparent;
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 40px;
+    list-style: none;
+}
+.posts li .logo {
+    font-family: Lusitana;
+    flex-basis: 15%;
+}
+.posts li img{
+    width:60%;
+}
+.posts li .name_body{
+    font-family: Lusitana;
+    flex-basis: 85%;
+}
+
+.posts li .name_body .name {
+    font-family: Lusitana;
+    font-weight: bold;
+}
+
+.posts li .name_body .datetime{
+    font-family: Lusitana;
+    color:gray;
+}
+
+@media screen and (max-width:500px) {
+    .posts li .name_body .name {
+        font-family: Lusitana;
+        font-size: 20px;
+    }
+}
+.posts li .menu_icon{
+    font-family: Lusitana;
+    width: 20px;
+    position: absolute;
+    right: 30px;
+    top: 18px;
+}
+
+
+.posts li .menu {
+    font-family: Lusitana;
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 15px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 3px;
+
+}
+.posts li .menu a {
+    font-family: Lusitana;
+    text-decoration: none;
+}
+.edit h1{
+    font-family: Lusitana;
+    text-align: center;
+}
+
+
+.posts li p h1{
+    font-family: Lusitana;
+    font-size: 100px;
+}

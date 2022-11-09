@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %} {% load static %}
+<h1 style="text-align:center; color:whitesmoke; margin-bottom:110px;">Update Post..</h1>
+<br>
+<section class ='content'>
+    <section class = 'post_form'>
+        <form method="POST" enctype="multipart/form-data" action="/edit/{{post.id}}/">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder ="Name" style=" border-style:double; border-radius:5px; border-color:black; border-width:2px;"value="{{ post.name }}" required>
+            <textarea name ="body" placeholder="Tell us anything" style=" border-style:double; border-radius:5px; border-color:black; border-width:2px;"required>{{ post.body }}</textarea> 
+            <input type="file" style=" border-style:double; border-radius:5px;color:white" name="image" style="color:white;">
+            <input type="submit" style=" border-style:double; border-radius:5px; border-color: black; border-width:2px"id="updatebutton" value="Update"/><br>
+            <button a href = "{url 'index'}" style="font-family:Lusitana; border-style:double; border-radius:5px;"> Cancel</button>
+        </form>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src = "{% static 'js/posts.js' %}"></script>
+</section>
+{% endblock %} 
